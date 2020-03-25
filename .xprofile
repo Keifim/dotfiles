@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+xbindkeys
+
+.screenlayout/HDMI1_DP1_HDMI2.sh
+xrandr --output DP-2 --mode 2560x1440 --rate 143.97 --output HDMI-1 --mode 1920x1080 --rate 60.00 --output HDMI-2 --mode 1920x1080 --rate 60.00
+/usr/bin/lxpolkit &
+/usr/bin/dunst &
+compton -CG &
+exec xfce4-clipman &
+~/.fehbg
