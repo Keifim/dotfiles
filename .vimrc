@@ -14,8 +14,10 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'othree/html5.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'ananagame/vimsence'
+"Plugin 'ananagame/vimsence'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'vlime/vlime'
+Plugin 'NLKNguyen/vim-lisp-syntax'
 
 Bundle 'jistr/vim-nerdtree-tabs'
 
@@ -89,8 +91,11 @@ set smartcase
 set viminfo='100,<9999,s100
 
 " Automatically save and load folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview"
+augroup AutoSaveFolds
+	autocmd!
+	autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadviewau BufWinLeave ?* mkview
+augroup END
 
 " Mouse
 set mouse=a

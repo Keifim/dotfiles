@@ -1,6 +1,6 @@
 #!/bin/bash
 
-id=$(xsetwacom list devices | grep -oP "id:\s+\K\w+" | awk "NR==2{print $2;exit}")
+id=$(xsetwacom list devices | grep -oP "id:\s+\K\w+" | awk "NR==1{print $1;exit}")
 name=$(grep "Using input driver 'wacom'" /var/log/Xorg.1.log | awk -F "for '" 'END{print substr($NF, 1, length($NF)-1)}')
 
 xsetwacom set $id MapToOutput DP-2;
