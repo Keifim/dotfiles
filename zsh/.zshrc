@@ -34,6 +34,5 @@ bindkey "^[[1;5D" backward-word
 
 # pywal - dmenu
 . "${HOME}/.cache/wal/colors.sh"
-alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh

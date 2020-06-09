@@ -6,8 +6,8 @@ super+q
 	bspc node -c
 # Run dmenu
 super+d
-	dmenu_run
-# Kill window with pointer
+	bash $HOME/.local/bin/dmenu.sh
+#Kill window with pointer
 super+x
 	xkill
 # Printscreen
