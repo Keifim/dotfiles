@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+# Copyright 2020 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="vpn daemon"
+description=""
+command=/usr/bin/vpn
+command_args="${vpn_args}"
+
+depend() {
+	need net
+}
+start() {
+	ebegin "Connecting to vpn"
+	start-stop-daemon --background --start --exec /home/keifim/.local/bin/vpn.sh --make-pidfile --pidfile /home/keifim/.local/bin/vpn.pid
+	eend $?
+}
+stop() {
+	ebegin	"Disconnecting from vpn"
+	start-stop-daemon --stop --exec /home/keifim/.local/bin/vpn.sh --pidfile /home/keifim/.local/bin/vpn.pid
+	pkill openvpn
+	eend $?
+}

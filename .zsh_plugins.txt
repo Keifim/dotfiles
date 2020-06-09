@@ -1,2 +1,0 @@
-ohmyzsh/oh-my-zsh path:plugins/svn
-ohmyzsh/oh-my-zsh path:plugins/git

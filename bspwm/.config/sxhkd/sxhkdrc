@@ -1,0 +1,81 @@
+# Run terminal
+super+Return
+	$TERMINAL
+# Kill window
+super+q
+	bspc node -c
+# Run dmenu
+super+d
+	dmenu_run
+# Kill window with pointer
+super+x
+	xkill
+# Printscreen
+@Print
+	scrot -s $HOME/prints/$(date +%F_%T).png -e 'xclip -selection clipboard -t image/png < $f'
+# Switch, move window
+super+{_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+super+{_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+# focus or move window to desktop
+super+{_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+# Reload sxhkd
+#super+shift+r
+#	pkill -USR1 -x sxhkd
+# Exec bspwmrc
+#super+ctrl+shift+r
+#	~/.config/bspwm/bspwmrc
+# Reload sxhkd and bspwm
+super+shift+r
+	pkill -USR1 -x sxhkd;~/.config/bspwm/bspwmrc
+# Toggle fullscreen
+super+shift+f
+	bspc node -t '~{fullscreen}'
+# Monocle toggle
+super+f
+	bspc desktop -l next
+# rotate 180
+super+r
+	bspc node @/ --rotate 90
+super+t
+	bspc node @/ --rotate 270
+# Float toggle
+super+space
+	bspc node -t '~{floating}'
+super+shift+space
+	bspc node -t '~{floating}'
+# Change window gap
+super+{minus,equal}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 4))
+# Balance the split rations of window
+super+b
+	bspc node @/ -B
+# focus the last window/desktop
+super+{Tab,shift+Tab,grave}
+	bspc {node,desktop,desktop} -f last
+# Swap this windows with the last focused
+super+apostrophe
+	bspc node -s last
+# Presel window for splitting
+super+ctrl+{h,j,k,l}
+	bspc node -p '~{west,south,north,east}'
+super+ctrl+{Left,Down,Up,Right}
+	bspc node -p '~{west,south,north,east}'
+# Move window into presel position
+super+alt+{h,j,k,l}
+	bspc node -n {west,south,north,east}
+super+alt+{Left,Down,Up,Right}
+	bspc node -n {west,south,north,east}
+# resize the current window
+super+ctrl+shift+{h,j,k,l}
+	bspc node {@west -r -15,@south -r +15,@south -r -15,@west -r +15}
+super+ctrl+shift+{{Left,Down,Up,Right}
+	bspc node {@west -r -15,@south -r +15,@south -r -15,@west -r +15}
+# Sets the splitting ration of the selected window (0<Ratio<1)
+super+ctrl+{1-9}
+	bspc node -r 0.{1-9}
+# Scratchpad
+super+shift+-
+	id=$(cat /tmp/scratchid); bspc node $id --flag hidden;bspc node -f $id

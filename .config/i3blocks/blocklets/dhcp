@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [[ -e "/var/run/dhcpcd.pid" ]]; then
-	echo "DHCP: YES"
-else
-	echo "DHCP: NO"
-fi

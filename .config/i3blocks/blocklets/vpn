@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [[ -e "/proc/sys/net/ipv4/conf/tun0" ]]; then
-	echo "VPN: YES"
-else
-	echo "VPN: NO"
-fi
