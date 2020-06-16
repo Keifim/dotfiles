@@ -21,21 +21,21 @@ super+{_,shift + }{h,j,k,l}
 # focus or move window to desktop
 super+{_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-# Reload sxhkd
-#super+shift+r
-#	pkill -USR1 -x sxhkd
-# Exec bspwmrc
-#super+ctrl+shift+r
-#	~/.config/bspwm/bspwmrc
+
+# "send+follow" equivalents.
+#super + {_,shift + ,ctrl + shift +,ctrl +}{0-9}
+#	;bspwm_dynamic_desktops {--df,--nsf,--nmf,--da} {0-9}
+
+
 # Reload sxhkd and bspwm
 super+shift+r
 	pkill -USR1 -x sxhkd;~/.config/bspwm/bspwmrc
 # Toggle fullscreen
-super+shift+f
-	bspc node -t '~{fullscreen}'
-# Monocle toggle
 super+f
-	bspc desktop -l next
+	bspc node -t '~{fullscreen}'
+# Monocle/ toggle
+#super+{m}
+#	bspc desktop -l ~{monocle,tiled}
 # rotate 180
 super+r
 	bspc node @/ --rotate 90

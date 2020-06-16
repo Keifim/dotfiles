@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'dylanaraps/wal.vim'
+	Plug 'scrooloose/nerdtree'
 call plug#end()
 
 set termguicolors

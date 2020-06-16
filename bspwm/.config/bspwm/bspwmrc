@@ -1,13 +1,17 @@
 #! /bin/sh
 
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc.bspwm &
 bspc rule -r "*"
 
-sxhkd &
-$GOPATH/bin/btops &
+#$GOPATH/bin/btops &
 
-bspc monitor DP-2 -d 1
-bspc monitor HDMI-2 -d 2
-bspc monitor HDMI-1 -d 3
+#bspc monitor DisplayPort-1 -d I V VIII X
+#bspc monitor HDMI-A-0 -d II IV VII
+#bspc monitor HDMI-A-1 -d III VI IX
+
+bspc monitor DisplayPort-1 -d 1 5 8 0
+bspc monitor HDMI-A-0 -d 2 4 7
+bspc monitor HDMI-A-1 -d 3 6 9
 
 bspc desktop -f 1
 

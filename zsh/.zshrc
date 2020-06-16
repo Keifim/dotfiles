@@ -26,6 +26,12 @@ alias vi='\vim'
 alias l='ls -la'
 alias c='clear'
 
+#openrc-shutdown
+alias reboot="openrc-shutdown -r now"
+alias halt="openrc-shutdown -H now"
+alias shutdown="openrc-shutdown"
+
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
