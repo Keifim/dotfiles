@@ -19,6 +19,11 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}%{$fg[yellow]%}%M%{$fg[green]%}@%{$fg[blue]%}%n %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%}%b "
 RPROMPT="%*"
 
+#openrc-shutdown
+alias reboot="openrc-shutdown -r now"
+alias halt="openrc-shutdown -H now"
+alias shutdown="openrc-shutdown"
+
 alias v="nvim"
 alias vim='nvim -d'
 alias vi='\vim'
@@ -26,14 +31,11 @@ alias vi='\vim'
 alias l='ls -la'
 alias c='clear'
 
-#openrc-shutdown
-alias reboot="openrc-shutdown -r now"
-alias halt="openrc-shutdown -H now"
-alias shutdown="openrc-shutdown"
-
-
+# binds
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # pywal
 (cat ~/.cache/wal/sequences &)

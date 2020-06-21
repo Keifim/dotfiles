@@ -5,3 +5,4 @@ wal -i $BG
 bgs "$(< "${HOME}/.cache/wal/wal")"
 $HOME/.local/bin/wacom
 xcompmgr &
+pulseaudio -D &
