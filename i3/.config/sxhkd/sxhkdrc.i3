@@ -27,7 +27,9 @@ super+{_,shift+}{z}
 	i3-msg {scratchpad show, move container to scratchpad}
 # screenshot
 @Print
-	scrot -s $HOME/prints/$(date +%F_%T).png -e 'xclip -selection clipboard -t image/png < $f'
+#	exec scrot -s $HOME/prints/$(date +%F_%T).png -e 'xclip -selection clipboard -t image/png < $f'
+	exec maim -s $HOME/prints/$(date +%F_%T).png
+
 # Dmenu and 3-dmenu-desktop
 super+{d,shift+d}
 	{bash $HOME/.local/bin/dmenu.sh,i3-dmenu-desktop}
@@ -42,9 +44,9 @@ super+alt+ctrl+{Left,Down,Up,Right}
 super+{_,shift+}{g}
 	i3-msg gaps inner current {plus,minus} 4
 super+shift+a
-	i3-msg gaps inner all set 14
+	i3-msg gaps inner current set 14
 super+a
-	i3-msg gaps inner all set 0
+	i3-msg gaps inner current set 0
 # discord
 super+alt+c
 	sh -c 'xhost si:localuser:cord && sudo -u cord discord'

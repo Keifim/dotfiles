@@ -31,6 +31,11 @@ alias vi='\vim'
 alias l='ls -la'
 alias c='clear'
 
+alias s="swallow "
+
+alias t="trash "
+alias rm='echo "This is not the command you are looking for."; false'
+
 # binds
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word

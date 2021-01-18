@@ -4,6 +4,7 @@ export BROWSER='firefox-bin'
 export READER='zathura'
 export GOPATH=$HOME/go
 export BG=$HOME/bg.jpg
+export ABG=$HOME/bg.gif
 
 export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.local/bin/"
 

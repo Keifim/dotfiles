@@ -2,7 +2,9 @@
 $HOME/.local/bin/HDMI1_DP1_HDMI2.sh
 #xrandr --output DisplayPort-1 --mode 2560x1440 --rate 143.97 --output HDMI-A-0 --mode 1920x1080 --rate 60.00 --output HDMI-A-1 --mode 1920x1080 --rate 60.00
 wal -i $BG
-bgs "$(< "${HOME}/.cache/wal/wal")"
+#$HOME/.local/bin/back4.sh 0.10 $BG &
+#bgs "$(< "${HOME}/.cache/wal/wal")"
+#bgs bgs/bg2.png bgs/bg1.png bgs/bg3.png
 $HOME/.local/bin/wacom
 xcompmgr &
-pulseaudio -D &
+pulseaudio -D

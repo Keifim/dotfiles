@@ -29,4 +29,6 @@ bar{
 	mode hide
 	hidden_state hide
 	modifier Mod3
+	tray_output primary
+	#output primary
 }

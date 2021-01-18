@@ -1,15 +1,20 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'dylanaraps/wal.vim'
-	Plug 'scrooloose/nerdtree'
+"	Plug 'scrooloose/nerdtree'
+	Plug 'vim-python/python-syntax'
 call plug#end()
 
-set termguicolors
 colorscheme wal
+"set termguicolors
 
 " Turn on syntax highlighting.
 syntax on
 set t_Co=256
-set cursorline
+"set cursorline
+"highlight CursorLine ctermbg=LightBlue cterm=bold "ctermfg=Black
+
+
+let g:python_highlight_all = 1
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
@@ -116,3 +121,7 @@ function! s:CombineSelection(line1, line2, cp)
   execute 'let char = "\u'.a:cp.'"'
   execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
 endfunction
+
+" netrw
+let g:netrw_banner = 0
+
