@@ -9,7 +9,7 @@ autoload -Uz compinit promptinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-promptinit; prompt gentoo
+#promptinit; prompt gentoo
 _comp_options+=(globdots)
 
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -20,16 +20,18 @@ PS1="%B%{$fg[red]%}%{$fg[yellow]%}%M%{$fg[green]%}@%{$fg[blue]%}%n %{$fg[magenta
 RPROMPT="%*"
 
 #openrc-shutdown
-alias reboot="openrc-shutdown -r now"
-alias halt="openrc-shutdown -H now"
-alias shutdown="openrc-shutdown"
+#alias reboot="openrc-shutdown -r now"
+#alias halt="openrc-shutdown -H now"
+#alias shutdown="openrc-shutdown"
 
 alias v="nvim"
 alias vim='nvim -d'
-alias vi='\vim'
+#alias vi='\vim'
 
 alias l='ls -la'
 alias c='clear'
+
+alias nuget="mono /usr/local/bin/nuget.exe"
 
 # binds
 bindkey "^[[1;5C" forward-word
@@ -43,4 +45,5 @@ bindkey "^[[F" end-of-line
 # pywal - dmenu
 . "${HOME}/.cache/wal/colors.sh"
 
-source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

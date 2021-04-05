@@ -7,6 +7,7 @@ super+q
 # Run dmenu
 super+d
 	bash $HOME/.local/bin/dmenu.sh
+
 #Kill window with pointer
 super+x
 	xkill
@@ -29,7 +30,7 @@ super+{_,shift + }{1-9,0}
 
 # Reload sxhkd and bspwm
 super+shift+r
-	pkill -USR1 -x sxhkd;~/.config/bspwm/bspwmrc
+	pkill -USR1 -x sxhkd;~/.config/bspwm/bspwmrc;sxhkd -c ~/.config/sxhkd/sxhkdrc.bspwm
 # Toggle fullscreen
 super+f
 	bspc node -t '~{fullscreen}'
@@ -79,3 +80,4 @@ super+ctrl+{1-9}
 # Scratchpad
 super+shift+-
 	id=$(cat /tmp/scratchid); bspc node $id --flag hidden;bspc node -f $id
+

@@ -1,1 +1,10 @@
 background_opacity: 0.93
+font:
+  normal:
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+  italic:
+    family: Hack
+  size: 10.0

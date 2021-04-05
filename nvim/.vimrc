@@ -1,10 +1,17 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'dylanaraps/wal.vim'
 	Plug 'scrooloose/nerdtree'
+	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'dense-analysis/ale'
+	Plug 'honza/vim-snippets'
+	Plug 'MarcWeber/vim-addon-mw-utils'
+	Plug 'tomtom/tlib_vim'
+	Plug 'vim-python/python-syntax'
+	Plug 'garbas/vim-snipmate'
 call plug#end()
 
 set termguicolors
-colorscheme wal
+"colorscheme wal
 
 " Turn on syntax highlighting.
 syntax on
@@ -75,6 +82,9 @@ set nu rnu
 
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
+" autocomplete
+"inoremap <S-Tab> <C-x><C-o>
+
 
 " Set syntax and filetype for .html.j2
 au BufRead,BufNewFile *.html.j2 set filetype=html
@@ -116,3 +126,9 @@ function! s:CombineSelection(line1, line2, cp)
   execute 'let char = "\u'.a:cp.'"'
   execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
 endfunction
+
+" compile and run
+autocmd filetype cs nnoremap <F4> :w <bar> exec '!mcs '.shellescape('%')-' && mono '.shellescape('%:r')<CR>
+
+" omnisharp
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : getline('.')[col('.')-2] =~# '[[:alnum:].-_#$]' ? '<C-x><C-o>' : '<Tab>'
